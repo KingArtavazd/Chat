@@ -19,3 +19,20 @@ io.on('connection', function (socket) {
         io.sockets.emit("display message", data);
     })
 });
+
+var fs = require('fs');
+
+var obj = 
+{
+    "username": "Vardan",
+    "last_name": "Hovsepyan",
+    "age": 13,
+    "tumo_student": true
+}
+
+function main() {
+    var JSO = JSON.stringify(obj);
+    fs.writeFileSync("obj.json", JSO);
+}
+
+main();
